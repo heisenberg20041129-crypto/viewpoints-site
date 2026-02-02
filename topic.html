@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>观点谱 - 话题</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">观点谱</a>
+    <nav class="nav">
+      <a href="index.html">话题</a>
+      <a href="about.html">关于</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="topic-hero">
+      <div>
+        <p id="topic-meta" class="eyebrow"></p>
+        <h1 id="topic-title">加载中...</h1>
+        <p id="topic-desc" class="sub"></p>
+      </div>
+      <div class="topic-metrics">
+        <div class="metric">
+          <span id="topic-items" class="metric-value">-</span>
+          <span class="metric-label">文章</span>
+        </div>
+        <div class="metric">
+          <span id="topic-clusters" class="metric-value">-</span>
+          <span class="metric-label">观点簇</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>观点结构总览</h2>
+        <p class="muted">中性分组标题 + 概要摘要。</p>
+      </div>
+      <div id="cluster-overview" class="cluster-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>簇内文章</h2>
+        <p class="muted">每条观点卡片都可回链原文。</p>
+      </div>
+      <div id="cluster-items"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>观点谱 · 只收录官方评论与专栏 · 不做真假裁判</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

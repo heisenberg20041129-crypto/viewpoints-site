@@ -1,0 +1,192 @@
+﻿{
+  "topics": [
+    {
+      "id": "ai-companion-2026",
+      "title": "AI 陪伴产品在 2026 年会走向何处",
+      "summary": "从情感价值到商业模式，多家媒体对 AI 陪伴类产品的增长与风险展开讨论。",
+      "domain": "AI / 数码",
+      "tags": ["情感价值", "商业模式", "隐私"],
+      "updated_at": "2026-02-01"
+    },
+    {
+      "id": "ev-price-war",
+      "title": "电动车价格战是否会伤害长期创新",
+      "summary": "关于降价策略、盈利能力与行业竞争格局的分歧逐渐显现。",
+      "domain": "汽车 / 商业",
+      "tags": ["成本", "供应链", "竞争"],
+      "updated_at": "2026-01-25"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "ai-value",
+      "topic_id": "ai-companion-2026",
+      "title": "情感价值驱动增长",
+      "summary": "强调陪伴体验与心理支持，是产品留存的核心。"
+    },
+    {
+      "id": "ai-risk",
+      "topic_id": "ai-companion-2026",
+      "title": "隐私与依赖风险上升",
+      "summary": "担心过度依赖与数据采集会引发伦理与监管挑战。"
+    },
+    {
+      "id": "ai-business",
+      "topic_id": "ai-companion-2026",
+      "title": "商业化仍在试探",
+      "summary": "认为订阅与增值服务尚未形成稳定模型。"
+    },
+    {
+      "id": "ev-scale",
+      "topic_id": "ev-price-war",
+      "title": "规模化可换来长期优势",
+      "summary": "价格战可能帮助头部企业扩大市占率与规模效应。"
+    },
+    {
+      "id": "ev-margin",
+      "topic_id": "ev-price-war",
+      "title": "利润被压缩影响研发",
+      "summary": "担心持续降价侵蚀研发预算，影响长期创新。"
+    },
+    {
+      "id": "ev-supply",
+      "topic_id": "ev-price-war",
+      "title": "供应链博弈升级",
+      "summary": "价格战外溢到零部件与渠道环节，竞争复杂化。"
+    }
+  ],
+  "items": [
+    {
+      "id": "ai-001",
+      "topic_id": "ai-companion-2026",
+      "outlet": "TechFocus",
+      "author": "林舟",
+      "category": "专栏",
+      "published_at": "2026-01-30",
+      "title": "AI 陪伴产品的核心价值仍是情感连接",
+      "url": "https://example.com/ai-companion-emotion",
+      "ai_summary": {
+        "claim": "AI 陪伴产品能否持续增长取决于情感连接的真实感。",
+        "reasons": [
+          "用户留存主要来自高频互动与情感回应",
+          "个性化对话塑造了替代性陪伴体验",
+          "内容生态与角色设定影响付费意愿"
+        ],
+        "caveat": "长期依赖可能带来心理风险与监管审查。"
+      },
+      "tags": ["体验", "情感"],
+      "cluster_id": "ai-value",
+      "review_status": "已审"
+    },
+    {
+      "id": "ai-002",
+      "topic_id": "ai-companion-2026",
+      "outlet": "DigitalDaily",
+      "author": "周洁",
+      "category": "评论",
+      "published_at": "2026-01-28",
+      "title": "隐私与依赖风险正在成为 AI 陪伴产品的硬伤",
+      "url": "https://example.com/ai-companion-risk",
+      "ai_summary": {
+        "claim": "AI 陪伴产品的隐私与依赖风险正在上升。",
+        "reasons": [
+          "对话数据涉及敏感个人信息",
+          "长期陪伴可能替代真实社交",
+          "监管关注点正在扩大"
+        ],
+        "caveat": "部分风险仍处于社会讨论阶段，尚未形成明确法规。"
+      },
+      "tags": ["风险", "隐私"],
+      "cluster_id": "ai-risk",
+      "review_status": "已审"
+    },
+    {
+      "id": "ai-003",
+      "topic_id": "ai-companion-2026",
+      "outlet": "BizScope",
+      "author": "高天",
+      "category": "观察",
+      "published_at": "2026-01-26",
+      "title": "AI 陪伴的商业化仍需要新打法",
+      "url": "https://example.com/ai-companion-business",
+      "ai_summary": {
+        "claim": "AI 陪伴产品的商业化模式仍处于试探期。",
+        "reasons": [
+          "订阅续费存在波动",
+          "增值服务需要更清晰的价值分层",
+          "渠道合作尚未稳定"
+        ],
+        "caveat": "如果体验迭代显著，付费意愿可能迅速提升。"
+      },
+      "tags": ["成本", "商业模式"],
+      "cluster_id": "ai-business",
+      "review_status": "存疑"
+    },
+    {
+      "id": "ev-001",
+      "topic_id": "ev-price-war",
+      "outlet": "AutoInsight",
+      "author": "王南",
+      "category": "评论",
+      "published_at": "2026-01-22",
+      "title": "价格战是电动车规模化的必经阶段",
+      "url": "https://example.com/ev-price-scale",
+      "ai_summary": {
+        "claim": "价格战有助于头部品牌迅速扩大规模并降低单位成本。",
+        "reasons": [
+          "规模效应降低生产与采购成本",
+          "品牌集中度提升带来渠道优势",
+          "快速渗透刺激基础设施建设"
+        ],
+        "caveat": "若销量增长不足以覆盖降价幅度，财务压力会加大。"
+      },
+      "tags": ["成本", "规模"],
+      "cluster_id": "ev-scale",
+      "review_status": "已审"
+    },
+    {
+      "id": "ev-002",
+      "topic_id": "ev-price-war",
+      "outlet": "MarketLens",
+      "author": "陈璐",
+      "category": "专栏",
+      "published_at": "2026-01-20",
+      "title": "利润被压缩可能削弱电动车创新动力",
+      "url": "https://example.com/ev-price-margin",
+      "ai_summary": {
+        "claim": "持续降价会侵蚀研发与服务投入，影响长期创新。",
+        "reasons": [
+          "毛利下降限制研发预算",
+          "售后体系被压缩影响用户体验",
+          "资本市场对盈利能力更敏感"
+        ],
+        "caveat": "技术突破仍可能来自高效供应链与平台化。"
+      },
+      "tags": ["风险", "研发"],
+      "cluster_id": "ev-margin",
+      "review_status": "已审"
+    },
+    {
+      "id": "ev-003",
+      "topic_id": "ev-price-war",
+      "outlet": "IndustryWatch",
+      "author": "赵一凡",
+      "category": "观察",
+      "published_at": "2026-01-18",
+      "title": "价格战向供应链与渠道蔓延",
+      "url": "https://example.com/ev-price-supply",
+      "ai_summary": {
+        "claim": "价格战已影响供应链与渠道议价格局。",
+        "reasons": [
+          "零部件压价加速中小供应商出清",
+          "渠道返点结构变化",
+          "库存压力传导到上游"
+        ],
+        "caveat": "部分零部件价格下降也可能提高终端性价比。"
+      },
+      "tags": ["供应链", "趋势"],
+      "cluster_id": "ev-supply",
+      "review_status": "未通过"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>观点谱 - 话题首页</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">观点谱</a>
+    <nav class="nav">
+      <a href="index.html" class="active">话题</a>
+      <a href="about.html">关于</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">官方评论汇总 / 人工审核</p>
+        <h1>看见分歧，而不是被单一叙事包围</h1>
+        <p class="sub">聚合媒体机构观点，用 AI 提炼论证路径并分组对照，帮助你快速理解争议的结构。</p>
+        <div class="hero-actions">
+          <a class="btn" href="#topics">查看话题</a>
+          <a class="btn ghost" href="about.html">方法说明</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel-card">
+          <p class="panel-title">默认展示</p>
+          <p class="panel-big">观点结构总览</p>
+          <p class="panel-desc">先看分组，再看文章，避免被单条观点牵引。</p>
+        </div>
+        <div class="panel-card alt">
+          <p class="panel-title">人工审核</p>
+          <p class="panel-big">主张不变形</p>
+          <p class="panel-desc">纠偏“事实当观点”与遗漏限定条件。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="topics" class="section">
+      <div class="section-head">
+        <h2>最新话题</h2>
+        <p class="muted">按更新时间排序。每个话题包含观点分组与回链。</p>
+      </div>
+      <div id="topic-list" class="topic-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>观点谱 · 只收录官方评论与专栏 · 不做真假裁判</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
