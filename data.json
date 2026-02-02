@@ -15,6 +15,14 @@
       "domain": "汽车 / 商业",
       "tags": ["成本", "供应链", "竞争"],
       "updated_at": "2026-01-25"
+    },
+    {
+      "id": "tencent-doubao-safety",
+      "title": "腾讯与豆包手机助手的 AI 安全争议",
+      "summary": "围绕“AI 代操作手机”的安全、授权与生态边界，多家媒体展开讨论。",
+      "domain": "AI / 互联网安全",
+      "tags": ["隐私", "合规", "生态"],
+      "updated_at": "2026-01-29"
     }
   ],
   "clusters": [
@@ -53,6 +61,30 @@
       "topic_id": "ev-price-war",
       "title": "供应链博弈升级",
       "summary": "价格战外溢到零部件与渠道环节，竞争复杂化。"
+    },
+    {
+      "id": "td-risk",
+      "topic_id": "tencent-doubao-safety",
+      "title": "安全与隐私边界争议",
+      "summary": "聚焦屏幕录制、权限控制与用户授权的风险讨论。"
+    },
+    {
+      "id": "td-ecosystem",
+      "topic_id": "tencent-doubao-safety",
+      "title": "应用生态与入口冲突",
+      "summary": "讨论 AI 代操作对平台流量与规则体系的冲击。"
+    },
+    {
+      "id": "td-response",
+      "topic_id": "tencent-doubao-safety",
+      "title": "回应与合规自证",
+      "summary": "梳理企业对“安全质疑”的回应与白皮书论证。"
+    },
+    {
+      "id": "td-governance",
+      "topic_id": "tencent-doubao-safety",
+      "title": "审慎治理与创新空间",
+      "summary": "强调风险识别与监管尺度的平衡。"
     }
   ],
   "items": [
@@ -187,6 +219,121 @@
       "tags": ["供应链", "趋势"],
       "cluster_id": "ev-supply",
       "review_status": "未通过"
+    },
+    {
+      "id": "td-001",
+      "topic_id": "tencent-doubao-safety",
+      "outlet": "21世纪经济报道",
+      "author": "雷晨",
+      "category": "观察",
+      "published_at": "2026-01-29",
+      "title": "AI手机助手争议背后：应用生态与数据控制如何重构",
+      "url": "https://www.21jingji.com/article/20260129/e526ecf9f1f355fe3ae9b2e672f13445.html",
+      "ai_summary": {
+        "claim": "争议核心不止是安全技术，而是 AI 代操作对应用生态规则的重构。",
+        "reasons": [
+          "安全争议牵涉到屏幕数据处理与授权边界",
+          "当用户授权能否替代第三方平台授权仍无共识",
+          "跨应用执行改变了平台流量与数据控制方式"
+        ],
+        "caveat": "白皮书的技术解释并不能完全消除对授权边界的疑虑。"
+      },
+      "tags": ["生态", "授权", "隐私"],
+      "cluster_id": "td-ecosystem",
+      "review_status": "未审",
+      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
+    },
+    {
+      "id": "td-002",
+      "topic_id": "tencent-doubao-safety",
+      "outlet": "21世纪经济报道",
+      "author": "肖潇",
+      "category": "报道",
+      "published_at": "2026-01-27",
+      "title": "腾讯员工大会后，豆包手机再次回应安全争议",
+      "url": "https://m.21jingji.com/article/20260127/herald/507306e09686059e2d62bf94e175e82d_zaker.html",
+      "ai_summary": {
+        "claim": "争议从安全质疑延伸到“数据上云”与责任归属问题。",
+        "reasons": [
+          "腾讯公开表达对“外挂式录屏上云”的安全担忧",
+          "豆包回应强调用户授权与“不存储、不训练”原则",
+          "争论焦点集中在云端处理与风险控制"
+        ],
+        "caveat": "企业声明与实际技术执行仍需第三方验证。"
+      },
+      "tags": ["安全", "合规", "回应"],
+      "cluster_id": "td-response",
+      "review_status": "未审",
+      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
+    },
+    {
+      "id": "td-003",
+      "topic_id": "tencent-doubao-safety",
+      "outlet": "南方周末",
+      "author": "贾梦雅",
+      "category": "深度",
+      "published_at": "2025-12-09",
+      "title": "“搅局者”豆包手机，撞上巨头“生态围墙”",
+      "url": "https://www.nfnews.com/content/J3WYgJQ4oz.html",
+      "ai_summary": {
+        "claim": "多平台限制的背后是入口价值与生态规则的冲突。",
+        "reasons": [
+          "跨应用代操作改变了平台对用户关系的掌控",
+          "权限能力被视为接近系统级“上帝之手”",
+          "平台安全策略与业务利益形成合力"
+        ],
+        "caveat": "部分限制源自既有风控规则，未必针对单一产品。"
+      },
+      "tags": ["入口", "生态", "平台规则"],
+      "cluster_id": "td-ecosystem",
+      "review_status": "未审",
+      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
+    },
+    {
+      "id": "td-004",
+      "topic_id": "tencent-doubao-safety",
+      "outlet": "21世纪经济报道",
+      "author": "孔海丽",
+      "category": "报道",
+      "published_at": "2025-12-04",
+      "title": "AI手机遭“抵抗”，便利和安全起冲突了？",
+      "url": "https://www.21jingji.com/article/20251204/herald/384382088229498d12ca68306ce396e1.html",
+      "ai_summary": {
+        "claim": "AI 代操作带来的便利与安全担忧在短期内难以兼得。",
+        "reasons": [
+          "无障碍权限被扩展使用引发安全争议",
+          "多平台触发安全验证或限制登录",
+          "金融类场景对录屏与共享敏感"
+        ],
+        "caveat": "争议与具体实现方式、权限控制强度密切相关。"
+      },
+      "tags": ["权限", "安全", "场景"],
+      "cluster_id": "td-risk",
+      "review_status": "未审",
+      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
+    },
+    {
+      "id": "td-005",
+      "topic_id": "tencent-doubao-safety",
+      "outlet": "中国网",
+      "author": "评论员",
+      "category": "评论",
+      "published_at": "2025-12-12",
+      "title": "包容审慎对待新技术 为创新留出空间",
+      "url": "https://www.chinanews.com.cn/cj/2025/12-12/10532132.shtml",
+      "ai_summary": {
+        "claim": "对新技术应保持包容审慎，避免一刀切抑制创新。",
+        "reasons": [
+          "AI 助手带来新的交互与效率价值",
+          "争议反映的是规则与治理尚未跟上",
+          "合理的安全边界应通过规则逐步明确"
+        ],
+        "caveat": "包容不等于放任，仍需强调合规与风险控制。"
+      },
+      "tags": ["治理", "创新", "审慎"],
+      "cluster_id": "td-governance",
+      "review_status": "未审",
+      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
     }
   ]
 }
