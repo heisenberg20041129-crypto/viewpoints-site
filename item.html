@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>观点谱 - 观点详情</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">观点谱</a>
+    <nav class="nav">
+      <a href="index.html">话题</a>
+      <a href="about.html">关于</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="detail-hero">
+      <div>
+        <p class="eyebrow">观点详情</p>
+        <h1 id="item-title">加载中...</h1>
+        <p id="item-meta" class="muted"></p>
+        <div class="detail-links">
+          <a id="item-back" class="btn ghost" href="index.html">返回话题</a>
+          <a id="item-source" class="btn" href="#" target="_blank" rel="noopener">原文回链</a>
+        </div>
+      </div>
+      <div class="detail-metrics">
+        <div class="metric">
+          <span id="item-review" class="metric-value">-</span>
+          <span class="metric-label">人审状态</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section detail-grid">
+      <div class="detail-panel">
+        <h2>观点结构</h2>
+        <div class="detail-block">
+          <p class="label">所属话题</p>
+          <p id="item-topic" class="value"></p>
+        </div>
+        <div class="detail-block">
+          <p class="label">所属观点簇</p>
+          <p id="item-cluster" class="value"></p>
+        </div>
+        <div class="detail-block">
+          <p class="label">核心主张</p>
+          <p id="item-claim" class="value"></p>
+        </div>
+        <div class="detail-block">
+          <p class="label">理由要点</p>
+          <ul id="item-reasons" class="detail-list"></ul>
+        </div>
+        <div class="detail-block">
+          <p class="label">争议 / 不确定</p>
+          <p id="item-caveat" class="value"></p>
+        </div>
+        <div class="detail-block">
+          <p class="label">标签</p>
+          <div id="item-tags" class="tags"></div>
+        </div>
+      </div>
+      <div class="detail-media">
+        <img id="item-image" class="detail-image" alt="" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>观点谱 · 只收录官方评论与专栏 · 不做真假裁判</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

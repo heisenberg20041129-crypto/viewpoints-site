@@ -43,8 +43,16 @@ const renderClusterCard = (cluster) => `
 
 const renderItemCard = (item) => {
   const summary = item.ai_summary || {};
+  const imageMarkup = item.image
+    ? `
+      <div class="item-media">
+        <img class="item-thumb is-blurred" src="${item.image}" alt="${item.image_alt || item.title}" loading="lazy" />
+      </div>
+    `
+    : "";
   return `
     <div class="item-card">
+      ${imageMarkup}
       <div class="item-meta">
         <span>${item.outlet}</span>
         <span>${item.author}</span>
@@ -60,6 +68,7 @@ const renderItemCard = (item) => {
       <div class="item-footer">
         <span class="badge">${item.review_status}</span>
         <div class="tags">${renderTags(item.tags)}</div>
+        <a class="btn ghost" href="item.html?id=${item.id}">详情</a>
         <a class="btn ghost" href="${item.url}" target="_blank" rel="noopener">原文</a>
       </div>
     </div>
@@ -129,11 +138,62 @@ const initTopic = (data) => {
     .join("");
 };
 
+const initItem = (data) => {
+  const titleEl = document.getElementById("item-title");
+  if (!titleEl) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const itemId = params.get("id");
+  const item = data.items.find((entry) => entry.id === itemId);
+
+  if (!item) {
+    titleEl.textContent = "未找到文章";
+    return;
+  }
+
+  const topic = data.topics.find((entry) => entry.id === item.topic_id);
+  const cluster = data.clusters.find((entry) => entry.id === item.cluster_id);
+  const summary = item.ai_summary || {};
+
+  document.getElementById("item-title").textContent = item.title;
+  document.getElementById("item-meta").textContent = `${item.outlet} · ${item.author} · ${item.category} · ${formatDate(item.published_at)}`;
+  document.getElementById("item-topic").textContent = topic ? topic.title : "";
+  document.getElementById("item-cluster").textContent = cluster ? cluster.title : "";
+  document.getElementById("item-claim").textContent = summary.claim || "";
+  document.getElementById("item-caveat").textContent = summary.caveat || "";
+  document.getElementById("item-tags").innerHTML = renderTags(item.tags);
+  document.getElementById("item-review").textContent = item.review_status || "";
+
+  const reasonsEl = document.getElementById("item-reasons");
+  reasonsEl.innerHTML = (summary.reasons || [])
+    .map((reason) => `<li>${reason}</li>`)
+    .join("");
+
+  const imageEl = document.getElementById("item-image");
+  if (item.image) {
+    imageEl.src = item.image;
+    imageEl.alt = item.image_alt || item.title;
+  } else {
+    imageEl.closest(".detail-media").style.display = "none";
+  }
+
+  const backEl = document.getElementById("item-back");
+  if (topic) {
+    backEl.href = `topic.html?id=${topic.id}`;
+  } else {
+    backEl.href = "index.html";
+  }
+
+  const sourceEl = document.getElementById("item-source");
+  sourceEl.href = item.url;
+};
+
 const init = async () => {
   const response = await fetch(DATA_URL);
   const data = await response.json();
   initIndex(data);
   initTopic(data);
+  initItem(data);
 };
 
 init();
