@@ -19,56 +19,65 @@ const renderTags = (tags = []) =>
 const renderTopicCard = (topic, items, clusters) => {
   const itemCount = items.filter((item) => item.topic_id === topic.id).length;
   const clusterCount = clusters.filter((cluster) => cluster.topic_id === topic.id).length;
-  const imageMarkup = topic.image
-    ? `
-      <div class="topic-media">
-        <img class="topic-thumb is-blurred" src="${topic.image}" alt="${topic.image_alt || topic.title}" loading="lazy" />
-      </div>
-    `
-    : "";
+  const tags = (topic.tags || [])
+    .map((tag) => `<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-md text-xs hover:bg-slate-200 dark:hover:bg-slate-700 cursor-pointer transition-colors">${tag}</span>`)
+    .join("");
+
+  const image = topic.image || "";
+  const imageAlt = topic.image_alt || topic.title;
 
   return `
-    <a class="topic-card" href="topic.html?id=${topic.id}">
-      ${imageMarkup}
-      <p class="eyebrow">${topic.domain} · 更新 ${formatDate(topic.updated_at)}</p>
-      <h3>${topic.title}</h3>
-      <p class="muted">${topic.summary}</p>
-      <div class="item-meta">
-        <span>${itemCount} 篇文章</span>
-        <span>${clusterCount} 个观点簇</span>
-      </div>
-      <div class="tags">${renderTags(topic.tags)}</div>
-    </a>
+    <article class="group relative bg-white dark:bg-[#111] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none">
+      <a class="block" href="topic.html?id=${topic.id}">
+        <div class="grid lg:grid-cols-2">
+          <div class="relative overflow-hidden aspect-[16/10] lg:aspect-auto">
+            ${image ? `<img alt="${imageAlt}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="${image}" loading="lazy"/>` : ""}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          </div>
+          <div class="p-10 lg:p-14 flex flex-col justify-center">
+            <div class="flex items-center gap-3 text-slate-400 text-xs font-medium mb-6">
+              <span class="text-accent font-bold">${topic.domain}</span>
+              <span>•</span>
+              <span>更新 ${formatDate(topic.updated_at)}</span>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-serif font-bold mb-6 group-hover:text-accent transition-colors">${topic.title}</h3>
+            <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">${topic.summary}</p>
+            <div class="flex flex-wrap items-center gap-6 mb-10">
+              <div class="flex items-center gap-2">
+                <span class="material-icons-outlined text-slate-400 text-sm">article</span>
+                <span class="text-sm font-medium text-slate-600 dark:text-slate-400">${itemCount} 篇文章</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-icons-outlined text-slate-400 text-sm">groups</span>
+                <span class="text-sm font-medium text-slate-600 dark:text-slate-400">${clusterCount} 个观点簇</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              ${tags}
+            </div>
+          </div>
+        </div>
+      </a>
+    </article>
   `;
 };
 
-const renderClusterCard = (cluster) => `
-  <div class="cluster-card">
-    <div class="cluster-title">${cluster.title}</div>
-    <p class="muted">${cluster.summary}</p>
-  </div>
-`;
-
 const renderItemCard = (item) => {
   const summary = item.ai_summary || {};
+  const reason = (summary.reasons || [])[0] || "";
+  const tags = (item.tags || []).map((tag) => `<span class="chip">${tag}</span>`).join("");
   return `
-    <div class="item-card">
-      <div class="item-meta">
-        <span>${item.outlet}</span>
-        <span>${item.author}</span>
-        <span>${item.category}</span>
-        <span>${formatDate(item.published_at)}</span>
+    <div class="item-row" data-tags="${(item.tags || []).join(",")}">
+      <div class="item-row-top">
+        <span class="item-source">${item.outlet}</span>
+        <span class="item-date">${formatDate(item.published_at)}</span>
+        <a class="icon-btn" href="${item.url}" target="_blank" rel="noopener" title="打开原文">↗</a>
       </div>
-      <div class="item-title">${item.title}</div>
-      <div class="item-summary">
-        <p><strong>核心主张：</strong>${summary.claim || ""}</p>
-        <p><strong>理由要点：</strong>${(summary.reasons || []).join("；")}</p>
-        <p><strong>争议 / 不确定：</strong>${summary.caveat || ""}</p>
-      </div>
-      <div class="item-footer">
-        <span class="badge">${item.review_status}</span>
-        <div class="tags">${renderTags(item.tags)}</div>
-        <a class="btn ghost" href="${item.url}" target="_blank" rel="noopener">原文</a>
+      <div class="item-claim">${summary.claim || ""}</div>
+      <div class="item-row-foot">
+        <span class="item-mini">理由：${reason}</span>
+        <span class="item-mini">限定：${summary.caveat || ""}</span>
+        <span class="item-chips">${tags}</span>
       </div>
     </div>
   `;
@@ -89,9 +98,41 @@ const initIndex = (data) => {
   if (!container) return;
 
   const topics = [...data.topics].sort(byUpdatedDesc);
-  container.innerHTML = topics
-    .map((topic) => renderTopicCard(topic, data.items, data.clusters))
-    .join("");
+  const render = (list) => {
+    container.innerHTML = list
+      .map((topic) => renderTopicCard(topic, data.items, data.clusters))
+      .join("");
+  };
+
+  render(topics);
+  container.classList.remove("is-loading");
+
+  const searchInput = document.getElementById("topic-search");
+  const clearBtn = document.getElementById("search-clear");
+  if (searchInput) {
+    const applySearch = () => {
+      const keyword = searchInput.value.trim().toLowerCase();
+      if (!keyword) {
+        render(topics);
+        return;
+      }
+      const filtered = topics.filter((topic) => {
+        const title = (topic.title || "").toLowerCase();
+        const summary = (topic.summary || "").toLowerCase();
+        return title.includes(keyword) || summary.includes(keyword);
+      });
+      render(filtered);
+    };
+
+    searchInput.addEventListener("input", applySearch);
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        render(topics);
+        searchInput.focus();
+      });
+    }
+  }
 };
 
 const initTopic = (data) => {
@@ -126,28 +167,129 @@ const initTopic = (data) => {
     }
   }
 
-  const overviewEl = document.getElementById("cluster-overview");
-  overviewEl.innerHTML = topicClusters.map(renderClusterCard).join("");
-
   const itemsByCluster = groupItemsByCluster(topicItems);
   const container = document.getElementById("cluster-items");
+
+  const navEl = document.getElementById("cluster-nav");
+  navEl.innerHTML = topicClusters
+    .map((cluster, index) => {
+      const label = String.fromCharCode(65 + index);
+      return `<button class="nav-chip" data-target="cluster-${cluster.id}">${label} ${cluster.title}</button>`;
+    })
+    .join("");
+
+  const overviewEl = document.getElementById("topic-overview");
+  if (overviewEl) {
+    overviewEl.textContent = topic.overview || "暂无总览。";
+  }
 
   container.innerHTML = topicClusters
     .map((cluster) => {
       const items = itemsByCluster.get(cluster.id) || [];
       const cards = items.map(renderItemCard).join("");
       return `
-        <div class="cluster-items">
-          <h3>${cluster.title}</h3>
-          <p class="muted">${cluster.summary}</p>
-          ${cards || "<p class=\"muted\">暂无观点卡片</p>"}
-        </div>
+        <details class="cluster-block" id="cluster-${cluster.id}" open>
+          <summary>
+            <span class="cluster-title">${cluster.title}</span>
+            <span class="cluster-count">${items.length}</span>
+            <span class="cluster-summary">${cluster.summary}</span>
+            <span class="cluster-tags">${(cluster.tags || []).map((tag) => `<span class="chip">${tag}</span>`).join("")}</span>
+          </summary>
+          <div class="cluster-body">
+            ${cards || "<p class=\"muted\">暂无观点卡片</p>"}
+          </div>
+        </details>
       `;
     })
     .join("");
+
+  const filterBar = document.getElementById("filter-bar");
+  if (filterBar) {
+    const tagSet = new Set();
+    topicItems.forEach((item) => (item.tags || []).forEach((tag) => tagSet.add(tag)));
+    const tagList = Array.from(tagSet);
+    filterBar.innerHTML = `
+      <button class="filter-chip is-active" data-tag="all">清除筛选</button>
+      ${tagList.map((tag) => `<button class="filter-chip" data-tag="${tag}">${tag}</button>`).join("")}
+    `;
+  }
+
+  const applyFilter = () => {
+    const active = Array.from(document.querySelectorAll(".filter-chip.is-active"))
+      .map((el) => el.dataset.tag)
+      .filter((tag) => tag && tag !== "all");
+    document.querySelectorAll(".item-row").forEach((row) => {
+      const rowTags = (row.dataset.tags || "").split(",").filter(Boolean);
+      const match = active.length === 0 || active.some((tag) => rowTags.includes(tag));
+      row.style.display = match ? "grid" : "none";
+    });
+  };
+
+  document.querySelectorAll(".filter-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const tag = chip.dataset.tag;
+      if (tag === "all") {
+        document.querySelectorAll(".filter-chip").forEach((el) => el.classList.remove("is-active"));
+        chip.classList.add("is-active");
+      } else {
+        document.querySelector(".filter-chip[data-tag=\"all\"]")?.classList.remove("is-active");
+        chip.classList.toggle("is-active");
+      }
+      applyFilter();
+    });
+  });
+
+  navEl.querySelectorAll(".nav-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const targetId = chip.dataset.target;
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          const navChip = navEl.querySelector(`[data-target="${id}"]`);
+          if (navChip) {
+            navChip.classList.toggle("is-active", entry.isIntersecting);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0.1 }
+    );
+    document.querySelectorAll(".cluster-block").forEach((block) => observer.observe(block));
+  }
 };
 
 const init = async () => {
+  const themeToggle = document.getElementById("theme-toggle");
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+  document.documentElement.classList.toggle("dark", initialTheme === "dark");
+  document.documentElement.setAttribute("data-theme", initialTheme);
+
+  if (themeToggle) {
+    if (themeToggle.dataset.mode !== "icon") {
+      themeToggle.textContent = initialTheme === "dark" ? "日间" : "暗夜";
+    }
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      document.documentElement.classList.toggle("dark", !isDark);
+      const nextTheme = isDark ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("theme", nextTheme);
+      if (themeToggle.dataset.mode !== "icon") {
+        themeToggle.textContent = nextTheme === "dark" ? "日间" : "暗夜";
+      }
+    });
+  }
+
   const response = await fetch(DATA_URL);
   const data = await response.json();
   initIndex(data);

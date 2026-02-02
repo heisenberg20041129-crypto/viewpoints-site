@@ -4,6 +4,7 @@
       "id": "tencent-doubao-safety",
       "title": "腾讯与豆包手机助手的 AI 安全争议",
       "summary": "围绕“AI 代操作手机”的安全、授权与生态边界，多家媒体展开讨论。",
+      "overview": "核心矛盾集中在“安全与授权边界 / 平台生态控制 / 创新空间”三条线。",
       "domain": "AI / 互联网安全",
       "tags": ["隐私", "合规", "生态"],
       "updated_at": "2026-01-29",
@@ -16,25 +17,29 @@
       "id": "td-risk",
       "topic_id": "tencent-doubao-safety",
       "title": "安全与隐私边界争议",
-      "summary": "聚焦屏幕录制、权限控制与用户授权的风险讨论。"
+      "summary": "聚焦屏幕录制、权限控制与用户授权的风险讨论。",
+      "tags": ["隐私", "权限", "风险"]
     },
     {
       "id": "td-ecosystem",
       "topic_id": "tencent-doubao-safety",
       "title": "应用生态与入口冲突",
-      "summary": "讨论 AI 代操作对平台流量与规则体系的冲击。"
+      "summary": "讨论 AI 代操作对平台流量与规则体系的冲击。",
+      "tags": ["生态", "入口", "规则"]
     },
     {
       "id": "td-response",
       "topic_id": "tencent-doubao-safety",
       "title": "回应与合规自证",
-      "summary": "梳理企业对“安全质疑”的回应与白皮书论证。"
+      "summary": "梳理企业对“安全质疑”的回应与白皮书论证。",
+      "tags": ["回应", "合规", "说明"]
     },
     {
       "id": "td-governance",
       "topic_id": "tencent-doubao-safety",
       "title": "审慎治理与创新空间",
-      "summary": "强调风险识别与监管尺度的平衡。"
+      "summary": "强调风险识别与监管尺度的平衡。",
+      "tags": ["治理", "创新", "尺度"]
     }
   ],
   "items": [

@@ -1,78 +1,155 @@
-﻿<!doctype html>
-<html lang="zh-CN">
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>观点谱 - 关于</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>观点谱 | 方法说明与免责声明</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;family=Noto+Sans+SC:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1a1a1a",
+            "background-light": "#fcfcf9",
+            "background-dark": "#0f0f0f",
+            "card-light": "rgba(255, 255, 255, 0.6)",
+            "card-dark": "rgba(20, 20, 20, 0.6)",
+          },
+          fontFamily: {
+            display: ["Noto Serif SC", "serif"],
+            sans: ["Noto Sans SC", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            xl: "1rem",
+          },
+        },
+      },
+    };
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .serif {
+      font-family: 'Noto Serif SC', serif;
+    }
+    .glass {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html">观点谱</a>
-    <nav class="nav">
-      <a href="index.html">话题</a>
-      <a href="about.html" class="active">关于</a>
-    </nav>
-  </header>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 transition-colors duration-300">
+  <nav class="sticky top-0 z-50 border-b border-black/5 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 glass">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="text-xl font-bold serif tracking-tight">观点谱</div>
+      <div class="flex items-center space-x-8 text-sm font-medium">
+        <a class="hover:text-primary dark:hover:text-white transition-colors" href="index.html">话题</a>
+        <a class="text-primary dark:text-white font-semibold" href="about.html">关于</a>
+        <button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors" onclick="toggleDarkMode()">
+          <span class="material-icons-outlined text-[20px]">dark_mode</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main class="max-w-6xl mx-auto px-6 pt-20 pb-32">
+    <header class="mb-20 text-center lg:text-left">
+      <div class="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-6 font-medium">
+        <span>方法说明</span>
+        <span class="h-px w-8 bg-slate-300 dark:bg-slate-700"></span>
+        <span>免责声明</span>
+      </div>
+      <h1 class="text-5xl lg:text-6xl serif font-bold text-slate-900 dark:text-white mb-8 leading-tight">
+        我们如何整理观点
+      </h1>
+      <p class="text-lg text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
+        只收录媒体机构的官方评论与专栏，用 AI 做结构化摘要，再由人工审核纠偏。我们致力于为深度读者提供客观、高效的资讯概览。
+      </p>
+    </header>
 
-  <main class="page">
-    <section class="about-hero">
-      <p class="eyebrow">方法说明 / 免责声明</p>
-      <h1>我们如何整理观点</h1>
-      <p class="sub">只收录媒体机构的官方评论与专栏，用 AI 做结构化摘要，再由人工审核纠偏。</p>
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+      <div class="p-8 rounded-xl bg-card-light dark:bg-card-dark border border-black/5 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6">
+          <span class="material-icons-outlined text-slate-600 dark:text-slate-400">inventory_2</span>
+        </div>
+        <h3 class="text-xl serif font-bold mb-4 text-slate-900 dark:text-white">收录范围</h3>
+        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          <li class="flex items-start"><span class="mr-2">•</span>仅官方评论、社论、专栏、署名观察</li>
+          <li class="flex items-start"><span class="mr-2">•</span>不抓评论区与个人社媒内容</li>
+          <li class="flex items-start"><span class="mr-2">•</span>优先低敏感话题，避免政治敏感议题</li>
+        </ul>
+      </div>
+      <div class="p-8 rounded-xl bg-card-light dark:bg-card-dark border border-black/5 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6">
+          <span class="material-icons-outlined text-slate-600 dark:text-slate-400">account_tree</span>
+        </div>
+        <h3 class="text-xl serif font-bold mb-4 text-slate-900 dark:text-white">输出结构</h3>
+        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          <li class="flex items-start"><span class="mr-2">•</span>核心主张（1 句）</li>
+          <li class="flex items-start"><span class="mr-2">•</span>理由要点（2-4 条）</li>
+          <li class="flex items-start"><span class="mr-2">•</span>争议 / 不确定（1 条）</li>
+          <li class="flex items-start"><span class="mr-2">•</span>原文回链</li>
+        </ul>
+      </div>
+      <div class="p-8 rounded-xl bg-card-light dark:bg-card-dark border border-black/5 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6">
+          <span class="material-icons-outlined text-slate-600 dark:text-slate-400">verified_user</span>
+        </div>
+        <h3 class="text-xl serif font-bold mb-4 text-slate-900 dark:text-white">人工审核</h3>
+        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          <li class="flex items-start"><span class="mr-2">•</span>防止“事实被当作观点”</li>
+          <li class="flex items-start"><span class="mr-2">•</span>补全限定条件，纠偏误读</li>
+          <li class="flex items-start"><span class="mr-2">•</span>存疑内容标记</li>
+        </ul>
+      </div>
+      <div class="p-8 rounded-xl bg-card-light dark:bg-card-dark border border-black/5 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6">
+          <span class="material-icons-outlined text-slate-600 dark:text-slate-400">gavel</span>
+        </div>
+        <h3 class="text-xl serif font-bold mb-4 text-slate-900 dark:text-white">纠错与撤下</h3>
+        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          <li class="flex items-start"><span class="mr-2">•</span>提供联系方式与处理机制</li>
+          <li class="flex items-start"><span class="mr-2">•</span>原文删除原则同步下架</li>
+          <li class="flex items-start"><span class="mr-2">•</span>可申请更正摘要</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="section about-grid">
-      <div class="about-card">
-        <h2>收录范围</h2>
-        <ul>
-          <li>仅官方评论、社论、专栏、署名观察</li>
-          <li>不抓评论区与个人社媒内容</li>
-          <li>优先低敏话题，避免政治敏感议题</li>
-        </ul>
+    <section class="max-w-4xl mx-auto">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl serif font-bold text-slate-900 dark:text-white">免责声明</h2>
+        <div class="flex-grow h-px bg-slate-200 dark:bg-slate-800"></div>
       </div>
-      <div class="about-card">
-        <h2>输出结构</h2>
-        <ul>
-          <li>核心主张（1 句）</li>
-          <li>理由要点（2-4 条）</li>
-          <li>争议 / 不确定（1 条）</li>
-          <li>原文回链</li>
-        </ul>
-      </div>
-      <div class="about-card">
-        <h2>人工审核</h2>
-        <ul>
-          <li>防止“事实被当作观点”</li>
-          <li>补全限定条件，纠偏误读</li>
-          <li>存疑内容标记</li>
-        </ul>
-      </div>
-      <div class="about-card">
-        <h2>纠错与撤下</h2>
-        <ul>
-          <li>提供联系方式与处理机制</li>
-          <li>原文删除则同步下架</li>
-          <li>可申请更正摘要</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>免责声明</h2>
-        <p class="muted">本站内容仅为信息整理，不构成投资、医疗或法律建议。</p>
-      </div>
-      <div class="notice">
-        <p>观点谱不对内容的正确性做裁判，不提供个性化信息流推荐。所有观点均来自原媒体的官方评论或专栏，摘要仅用于帮助读者快速理解观点结构。</p>
+      <div class="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed">
+        <p class="font-medium text-slate-800 dark:text-slate-200">
+          本站内容仅为信息整理，不构成投资、医疗或法律建议。
+        </p>
+        <div class="p-6 rounded-lg bg-slate-50 dark:bg-white/[0.02] border border-black/5 dark:border-white/5 italic">
+          观点谱不对内容的正确性做裁判，不提供个性化信息流推荐。所有观点均来自原媒体的官方评论或专栏，摘要仅用于帮助读者快速理解观点结构。
+        </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p>观点谱 · 只收录官方评论与专栏 · 不做真假裁判</p>
+  <footer class="border-t border-black/5 dark:border-white/5 py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="text-sm tracking-[0.2em] text-slate-400 dark:text-slate-600 serif uppercase">
+        观点谱 · 只收录官方评论与专栏 · 不做真假裁判
+      </p>
+      <div class="mt-4 text-[10px] text-slate-400/60 dark:text-slate-600/60 uppercase tracking-widest">
+        © 2026 Viewpoint Spectrum. All rights reserved.
+      </div>
+    </div>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>
