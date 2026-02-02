@@ -22,7 +22,9 @@
       "summary": "围绕“AI 代操作手机”的安全、授权与生态边界，多家媒体展开讨论。",
       "domain": "AI / 互联网安全",
       "tags": ["隐私", "合规", "生态"],
-      "updated_at": "2026-01-29"
+      "updated_at": "2026-01-29",
+      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png",
+      "image_alt": "腾讯与豆包手机助手 AI 安全争议"
     }
   ],
   "clusters": [
@@ -240,8 +242,7 @@
       },
       "tags": ["生态", "授权", "隐私"],
       "cluster_id": "td-ecosystem",
-      "review_status": "未审",
-      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
+      "review_status": "未审"
     },
     {
       "id": "td-002",
@@ -263,8 +264,7 @@
       },
       "tags": ["安全", "合规", "回应"],
       "cluster_id": "td-response",
-      "review_status": "未审",
-      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
+      "review_status": "未审"
     },
     {
       "id": "td-003",
@@ -286,8 +286,7 @@
       },
       "tags": ["入口", "生态", "平台规则"],
       "cluster_id": "td-ecosystem",
-      "review_status": "未审",
-      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
+      "review_status": "未审"
     },
     {
       "id": "td-004",
@@ -309,8 +308,7 @@
       },
       "tags": ["权限", "安全", "场景"],
       "cluster_id": "td-risk",
-      "review_status": "未审",
-      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
+      "review_status": "未审"
     },
     {
       "id": "td-005",
@@ -332,8 +330,7 @@
       },
       "tags": ["治理", "创新", "审慎"],
       "cluster_id": "td-governance",
-      "review_status": "未审",
-      "image": "https://viewpoints-site.pages.dev/image/tencent-doubao.png"
+      "review_status": "未审"
     }
   ]
 }
