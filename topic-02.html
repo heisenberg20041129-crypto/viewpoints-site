@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>话题分析 | “网购娃娃菜中毒”事件多次反转（天台警方通报）</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        "background-light": "#fcfcfc",
+                        "background-dark": "#0a0a0a",
+                        accent: "#6366f1",
+                    },
+                    fontFamily: {
+                        serif: ["'Noto Serif SC'", "serif"],
+                        display: ["'Noto Sans SC'", "sans-serif"],
+                        sans: ["Inter", "'Noto Sans SC'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        xl: "1.25rem",
+                        "2xl": "2rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+      .glass-effect {
+        @apply backdrop-blur-md bg-white/70 dark:bg-zinc-900/70;
+      }
+      .text-balance {
+        text-wrap: balance;
+      }
+      .hover-lift {
+        @apply transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1;
+      }
+      .perspective-line {
+        @apply absolute left-[-1.5rem] top-8 bottom-0 w-px bg-slate-200 dark:bg-slate-800;
+      }
+      .perspective-node {
+        @apply absolute left-[-1.75rem] top-8 w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-600 border-2 border-white dark:border-black;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased">
+    <nav class="sticky top-0 z-50 glass-effect border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                <a class="flex items-center gap-2 group" href="index.html">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-hover:text-primary dark:group-hover:text-white transition-colors">arrow_back</span>
+                    <span
+                        class="text-sm font-medium text-slate-500 group-hover:text-primary dark:group-hover:text-white transition-colors">返回话题列表</span>
+                </a>
+                <div class="h-4 w-px bg-slate-200 dark:bg-slate-800"></div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xl font-serif font-bold tracking-tight">观点谱</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-6 font-medium text-sm">
+
+                <button id="theme-toggle" data-mode="icon"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" type="button"
+                    aria-label="切换暗夜模式">
+                    <span class="material-symbols-outlined text-[20px] block dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined text-[20px] hidden dark:block">light_mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <header class="mb-12">
+            <nav class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-6 uppercase tracking-widest">
+                <a class="hover:text-accent transition-colors" href="index.html">首页</a>
+                <span>/</span>
+                <a class="hover:text-accent transition-colors" href="index.html#topics">社会舆论</a>
+                <span>/</span>
+                <span class="text-slate-600 dark:text-slate-300">话题详情</span>
+            </nav>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="max-w-4xl">
+                    <div
+                        class="inline-block px-3 py-1 rounded-md bg-accent/10 text-accent text-[10px] font-bold tracking-wider uppercase mb-4">
+                        深度结构分析
+                    </div>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 dark:text-white leading-tight text-balance">
+                        “网购娃娃菜中毒”事件多次反转：从食安恐慌到警方通报
+                    </h1>
+                    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl">
+                        浙江台州天台一对夫妻自述“网购娃娃菜中毒”引发广泛关注，舆论经历多轮反转。警方通报指出两人涉嫌以此敲诈勒索，已被依法采取刑事强制措施。事件同时引发对媒体核实、平台传播与“流量驱动叙事”的集中讨论。
+                    </p>
+
+                </div>
+                <div class="flex gap-4">
+                    <div class="text-right hidden md:block">
+                        <p class="text-xs text-slate-400 font-medium uppercase tracking-tighter mb-1">最后更新时间</p>
+                        <p class="text-sm font-mono font-medium">2026.02.05 17:30</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="mb-12">
+            <div class="text-center">
+                <p class="text-[12px] uppercase tracking-[0.35em] text-slate-400 dark:text-slate-500">观点光谱</p>
+                <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">三方主张的结构化对比：风险质疑 / 技术中性 / 效率支持</p>
+            </div>
+            <div class="mt-8 px-6">
+                <div class="relative h-3 rounded-full bg-gradient-to-r from-rose-400 via-slate-300 to-emerald-400">
+                </div>
+                <div class="relative -mt-6 flex justify-between">
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="w-4 h-4 rounded-full bg-rose-500 border-4 border-white dark:border-slate-900"></span>
+                        <p class="mt-3 text-xs font-semibold text-rose-600 dark:text-rose-400">风险质疑</p>
+                        <p class="text-[10px] text-slate-400">隐私 / 竞争 / 滥用</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="w-4 h-4 rounded-full bg-slate-500 border-4 border-white dark:border-slate-900"></span>
+                        <p class="mt-3 text-xs font-semibold text-slate-600 dark:text-slate-400">技术中性</p>
+                        <p class="text-[10px] text-slate-400">标准 / 权责 / 规范</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="w-4 h-4 rounded-full bg-emerald-500 border-4 border-white dark:border-slate-900"></span>
+                        <p class="mt-3 text-xs font-semibold text-emerald-600 dark:text-emerald-400">效率支持</p>
+                        <p class="text-[10px] text-slate-400">体验 / 便利 / 创新</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-8">
+                <section class="space-y-12">
+                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-900 pb-4">
+                        <h2 class="text-xl font-serif font-bold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent">account_tree</span>
+                            媒体观点结构图
+                        </h2>
+                        <div class="flex items-center gap-4 text-xs">
+                            <span class="flex items-center gap-1"><span
+                                    class="w-2 h-2 rounded-full bg-emerald-500"></span> 积极/支持</span>
+                            <span class="flex items-center gap-1"><span
+                                    class="w-2 h-2 rounded-full bg-amber-500"></span> 中立/技术</span>
+                            <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                                质疑/担忧</span>
+                        </div>
+                    </div>
+                    <!-- ✅ 1) PROS：依法处置 / 通报信息为主 -->
+                    <details class="relative pl-8 group" open>
+                        <summary class="cursor-pointer list-none">
+                            <div class="perspective-line border-emerald-500/30"></div>
+                            <div class="perspective-node bg-emerald-500"></div>
+                            <div
+                                class="flex items-center justify-between gap-4 rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/60 dark:bg-zinc-900/60 px-5 py-4 hover:bg-white/80 dark:hover:bg-zinc-900/80 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <span
+                                        class="text-sm font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">依法处置与权威通报</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950 text-[10px] text-emerald-600">PROS</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-[18px] group-open:rotate-180 transition-transform">expand_more</span>
+                            </div>
+                        </summary>
+
+                        <div class="space-y-4 mt-6">
+                            <div
+                                class="glass-effect p-6 rounded-xl border border-slate-200/50 dark:border-slate-800/50 hover-lift">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold text-slate-400">人民网 · 社会</span>
+                                    <span class="text-[10px] text-slate-400">2026-02-03</span>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                                    摘要：警方通报称涉事夫妻因涉嫌敲诈勒索被依法采取刑事强制措施，并提醒网民不造谣、不信谣、不传谣。
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">警方通报</span>
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">依法处置</span>
+                                    </div>
+                                    <a class="text-xs font-medium text-accent flex items-center gap-1"
+                                        href="https://society.people.com.cn/n1/2026/0203/c1008-40658932.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        原文 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div
+                                class="glass-effect p-6 rounded-xl border border-slate-200/50 dark:border-slate-800/50 hover-lift">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold text-slate-400">光明网 · 转载通报</span>
+                                    <span class="text-[10px] text-slate-400">2026-02-04</span>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                                    摘要：转载@浙江天台公安通报，对案件处置进展作权威发布。
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">权威发布</span>
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">辟谣提醒</span>
+                                    </div>
+                                    <a class="text-xs font-medium text-accent flex items-center gap-1"
+                                        href="https://m.gmw.cn/2026-02/04/content_1304330985.htm" target="_blank"
+                                        rel="noopener noreferrer">
+                                        原文 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ✅ 2) NEUTRAL：过程还原 / 事实链条 -->
+                    <details class="relative pl-8 group" open>
+                        <summary class="cursor-pointer list-none">
+                            <div class="perspective-line border-amber-500/30"></div>
+                            <div class="perspective-node bg-amber-500"></div>
+                            <div
+                                class="flex items-center justify-between gap-4 rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/60 dark:bg-zinc-900/60 px-5 py-4 hover:bg-white/80 dark:hover:bg-zinc-900/80 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <span
+                                        class="text-sm font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest">事实链条与调查还原</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950 text-[10px] text-amber-600">NEUTRAL</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-[18px] group-open:rotate-180 transition-transform">expand_more</span>
+                            </div>
+                        </summary>
+
+                        <div class="space-y-4 mt-6">
+                            <div
+                                class="glass-effect p-6 rounded-xl border border-slate-200/50 dark:border-slate-800/50 hover-lift">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold text-slate-400">央视网 · 正点财经</span>
+                                    <span class="text-[10px] text-slate-400">2026-02-05</span>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                                    摘要：节目追踪“多次反转”的传播路径与关键节点，并以记者走访方式还原事件过程。
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">调查还原</span>
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">节点梳理</span>
+                                    </div>
+                                    <a class="text-xs font-medium text-accent flex items-center gap-1"
+                                        href="https://tv.cctv.com/2026/02/05/VIDEmvWKZLe5kUQk52Dtqbpi260205.shtml"
+                                        target="_blank" rel="noopener noreferrer">
+                                        原文 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div
+                                class="glass-effect p-6 rounded-xl border border-slate-200/50 dark:border-slate-800/50 hover-lift">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold text-slate-400">央广网 · 新闻</span>
+                                    <span class="text-[10px] text-slate-400">2026-02-05</span>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                                    摘要：以通报为核心信息源，串联“爆料—传播—反转—处置”的时间线，并提示信息核验的重要性。
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">时间线</span>
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">核验机制</span>
+                                    </div>
+                                    <a class="text-xs font-medium text-accent flex items-center gap-1"
+                                        href="https://www.cnr.cn/newscenter/native/gd/20260205/t20260205_527516392.shtml"
+                                        target="_blank" rel="noopener noreferrer">
+                                        原文 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- ✅ 3) CONS：传播反思 / 流量与信任危机 -->
+                    <details class="relative pl-8 group" open>
+                        <summary class="cursor-pointer list-none">
+                            <div class="perspective-line border-rose-500/30"></div>
+                            <div class="perspective-node bg-rose-500"></div>
+                            <div
+                                class="flex items-center justify-between gap-4 rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/60 dark:bg-zinc-900/60 px-5 py-4 hover:bg-white/80 dark:hover:bg-zinc-900/80 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <span
+                                        class="text-sm font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest">流量驱动与信任代价</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950 text-[10px] text-rose-600">CONS</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-[18px] group-open:rotate-180 transition-transform">expand_more</span>
+                            </div>
+                        </summary>
+
+                        <div class="grid gap-4 mt-6">
+                            <div
+                                class="glass-effect p-6 rounded-xl border border-slate-200/50 dark:border-slate-800/50 hover-lift">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold text-slate-400">央视网 · 共同关注</span>
+                                    <span class="text-[10px] text-slate-400">2026-02-04</span>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                                    摘要：围绕“流量狂欢下的真相迷失与信任危机”展开讨论，强调多轮反转对社会信任与维权环境的冲击。
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">传播反思</span>
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">信任危机</span>
+                                    </div>
+                                    <a class="text-xs font-medium text-accent flex items-center gap-1"
+                                        href="https://tv.cctv.com/2026/02/04/VIDEgssX9atXSl5lDsos6xml260204.shtml"
+                                        target="_blank" rel="noopener noreferrer">
+                                        原文 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div
+                                class="glass-effect p-6 rounded-xl border border-slate-200/50 dark:border-slate-800/50 hover-lift">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold text-slate-400">央视网 · 共同关注</span>
+                                    <span class="text-[10px] text-slate-400">2026-02-04</span>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                                    摘要：聚焦“多次反转真相是何”，对信息来源、传播路径与公众情绪的放大效应进行复盘。
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">复盘</span>
+                                        <span
+                                            class="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">舆论场</span>
+                                    </div>
+                                    <a class="text-xs font-medium text-accent flex items-center gap-1"
+                                        href="https://tv.cctv.com/2026/02/04/VIDETuwNDishEaAR8GfoANRo260204.shtml"
+                                        target="_blank" rel="noopener noreferrer">
+                                        原文 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                </section>
+            </div>
+            <aside class="lg:col-span-4 space-y-8">
+                <div class="p-8 border border-slate-100 dark:border-slate-800 rounded-2xl">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">观点谱总结</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+                        “这是一场典型的‘技术先进性’与‘规则滞后性’的博弈。虽然 AI Agent 提供了诱人的效率前景，但在现有的安全框架下，此类越界操作仍面临巨大的伦理与法律风险。”
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer class="mt-24 border-t border-slate-200 dark:border-slate-800 py-16">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <span class="text-xl font-serif font-bold text-slate-900 dark:text-white">观点谱</span>
+                <span class="h-4 w-[1px] bg-slate-300 dark:bg-slate-700"></span>
+                <p class="text-sm text-slate-500 dark:text-slate-400">只收录官方评论与专栏 · 不做真假裁判</p>
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>

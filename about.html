@@ -32,9 +32,6 @@
         },
       },
     };
-    function toggleDarkMode() {
-      document.documentElement.classList.toggle('dark');
-    }
   </script>
   <style>
     body {
@@ -57,7 +54,7 @@
       <div class="flex items-center space-x-8 text-sm font-medium">
         <a class="hover:text-primary dark:hover:text-white transition-colors" href="index.html">话题</a>
         <a class="text-primary dark:text-white font-semibold" href="about.html">关于</a>
-        <button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors" onclick="toggleDarkMode()">
+        <button id="theme-toggle" data-mode="icon" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors" type="button" aria-label="切换暗夜模式">
           <span class="material-icons-outlined text-[20px]">dark_mode</span>
         </button>
       </div>
@@ -151,5 +148,6 @@
       </div>
     </div>
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
